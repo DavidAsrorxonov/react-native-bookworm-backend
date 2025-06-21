@@ -4,9 +4,11 @@ import authRoutes from "./routes/authRoutes.js";
 import { connedtDB } from "./lib/db.js";
 import bookRoutes from "./routes/bookRoutes.js";
 import cors from "cors";
+import job from "./lib/cron.js";
 
 dotenv.config();
 
+job.start();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
